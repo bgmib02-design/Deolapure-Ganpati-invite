@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deolapure Family | Ganpati Invitation</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#160802;
+  color:#fff7df;
+  font-family:Poppins,sans-serif;
+  overflow-x:hidden;
+}
+
+/* ---------- LOADER ---------- */
+
+.loader{
+  position:fixed;
+  inset:0;
+  background:#160802;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  transition:1s ease;
+}
+
+.loader.hide{
+  opacity:0;
+  pointer-events:none;
+}
+
+.om{
+  font-family:"Cormorant Garamond",serif;
+  font-size:80px;
+  color:#e9b949;
+  animation:pulse 2s infinite;
+}
+
+.loader p{
+  letter-spacing:4px;
+  font-size:12px;
+  margin-top:10px;
+  color:#d9b878;
+}
+
+@keyframes pulse{
+  50%{transform:scale(1.12);opacity:.7}
+}
+
+/* ---------- COMMON ---------- */
+
+section{
+  position:relative;
+  min-height:100vh;
+  padding:80px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.container{
+  width:min(900px,100%);
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.gold{
+  color:#e9b949;
+}
+
+.heading{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(42px,9vw,80px);
+  line-height:1;
+  color:#f2c967;
+  margin-bottom:18px;
+}
+
+.subtitle{
+  color:#d9b878;
+  font-size:13px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.line{
+  width:90px;
+  height:1px;
+  background:#d6a83c;
+  margin:25px auto;
+}
+
+/* ---------- BACKGROUND ---------- */
+
+.bg-glow{
+  position:absolute;
+  width:500px;
+  height:500px;
+  border-radius:50%;
+  background:#b85d0b;
+  filter:blur(150px);
+  opacity:.18;
+}
+
+.glow1{
+  top:-150px;
+  left:-150px;
+}
+
+.glow2{
+  bottom:-200px;
+  right:-150px;
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+  min-height:100svh;
+  background:
+    linear-gradient(rgba(20,5,0,.35),rgba(20,5,0,.92)),
+    url("https://images.unsplash.com/photo-1604821462586-0f4e5c4b8f1c?auto=format&fit=crop&w=1400&q=80")
+    center/cover;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at center,transparent 10%,rgba(15,3,0,.8) 90%);
+}
+
+.hero-content{
+  position:relative;
+  z-index:3;
+}
+
+.small{
+  font-family:"Cormorant Garamond",serif;
+  font-size:22px;
+  color:#e5c27c;
+}
+
+.hero h1{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(65px,16vw,140px);
+  line-height:.85;
+  color:#f2ca6a;
+  text-shadow:0 5px 30px #000;
+}
+
+.family{
+  margin-top:22px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(28px,7vw,55px);
+  letter-spacing:2px;
+}
+
+.enter{
+  margin-top:45px;
+  border:1px solid #d6a83c;
+  background:rgba(0,0,0,.25);
+  color:#f5d98e;
+  padding:14px 35px;
+  border-radius:50px;
+  cursor:pointer;
+  letter-spacing:2px;
+  transition:.3s;
+}
+
+.enter:hover{
+  background:#d6a83c;
+  color:#1b0800;
+}
+
+/* ---------- FLOATING PETALS ---------- */
+
+.petal{
+  position:absolute;
+  width:8px;
+  height:8px;
+  background:#e4a83c;
+  border-radius:50% 0 50% 0;
+  opacity:.7;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  from{
+    transform:translateY(-20px) rotate(0);
+  }
+  to{
+    transform:translateY(110vh) rotate(500deg);
+  }
+}
+
+/* ---------- INVITATION ---------- */
+
+.invitation{
+  background:
+    radial-gradient(circle at center,#4d1b05 0,#210a02 50%,#120400 100%);
+}
+
+.card{
+  padding:45px 25px;
+  border:1px solid rgba(218,170,70,.5);
+  background:rgba(35,9,1,.55);
+  backdrop-filter:blur(8px);
+  box-shadow:0 0 50px rgba(196,112,22,.12);
+}
+
+.card p{
+  max-width:650px;
+  margin:0 auto;
+  line-height:2;
+  color:#ead8ad;
+  font-size:15px;
+}
+
+/* ---------- DETAILS ---------- */
+
+.details{
+  background:#100300;
+}
+
+.details-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:40px;
+}
+
+.detail{
+  border:1px solid rgba(218,170,70,.35);
+  padding:30px 15px;
+  background:rgba(255,255,255,.025);
+}
+
+.icon{
+  font-size:30px;
+  margin-bottom:15px;
+}
+
+.detail h3{
+  font-family:"Cormorant Garamond",serif;
+  color:#eac265;
+  font-size:25px;
+  margin-bottom:8px;
+}
+
+.detail p{
+  color:#cbb995;
+  font-size:13px;
+}
+
+/* ---------- COUNTDOWN ---------- */
+
+.countdown{
+  margin-top:45px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.time{
+  min-width:75px;
+  padding:15px 10px;
+  border:1px solid #7c551b;
+  background:#1c0700;
+}
+
+.time strong{
+  display:block;
+  font-family:"Cormorant Garamond",serif;
+  font-size:35px;
+  color:#eac265;
+}
+
+.time span{
+  font-size:9px;
+  letter-spacing:2px;
+  color:#ad9670;
+}
+
+/* ---------- GALLERY ---------- */
+
+.gallery{
+  background:#180500;
+}
+
+.gallery-grid{
+  margin-top:35px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.gallery-grid img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border:1px solid rgba(218,170,70,.3);
+  transition:.5s;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.03);
+}
+
+/* ---------- LOCATION ---------- */
+
+.location{
+  background:
+    linear-gradient(rgba(15,3,0,.85),rgba(15,3,0,.95)),
+    url("https://images.unsplash.com/photo-1532375810709-75b1da00537c?auto=format&fit=crop&w=1400&q=80")
+    center/cover;
+}
+
+.map-btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:15px 30px;
+  border:1px solid #d6a83c;
+  color:#f0cd7b;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.map-btn:hover{
+  background:#d6a83c;
+  color:#1b0800;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer{
+  min-height:70vh;
+  background:#0d0200;
+}
+
+.footer h2{
+  font-family:"Cormorant Garamond",serif;
+  color:#eac265;
+  font-size:55px;
+}
+
+.footer p{
+  color:#b9a27c;
+  margin-top:15px;
+}
+
+/* ---------- MUSIC ---------- */
+
+.music{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  border:1px solid #d6a83c;
+  background:#210900;
+  color:#e9bd59;
+  z-index:1000;
+  cursor:pointer;
+  font-size:20px;
+}
+
+/* ---------- REVEAL ---------- */
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:650px){
+
+  section{
+    padding:70px 18px;
+  }
+
+  .details-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-grid img{
+    height:300px;
+  }
+
+  .hero h1{
+    font-size:75px;
+  }
+
+  .family{
+    font-size:32px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+
+<div class="loader" id="loader">
+  <div class="om">ॐ</div>
+  <p>श्री गणेशाय नमः</p>
+</div>
+
+<!-- MUSIC -->
+
+<button class="music" id="musicBtn">♪</button>
+
+<audio id="music" loop>
+  <!-- APNI MUSIC FILE YAHAN LAGANA -->
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="bg-glow glow1"></div>
+  <div class="bg-glow glow2"></div>
+
+  <div class="hero-content">
+
+    <div class="small">॥ श्री गणेशाय नमः ॥</div>
+
+    <div class="line"></div>
+
+    <h1>गणपती<br>बाप्पा</h1>
+
+    <div class="family">
+      Deolapure Family
+    </div>
+
+    <p class="subtitle" style="margin-top:15px;">
+      cordially invites you
+    </p>
+
+    <button class="enter" onclick="document.getElementById('invite').scrollIntoView()">
+      ENTER INVITATION
+    </button>
+
+  </div>
+</section>
+
+
+<!-- INVITATION -->
+
+<section class="invitation" id="invite">
+
+  <div class="container reveal">
+
+    <div class="subtitle">आपले सहर्ष स्वागत आहे</div>
+
+    <div class="line"></div>
+
+    <div class="card">
+
+      <div class="heading">गणेशोत्सव</div>
+
+      <p>
+        गणपती बाप्पांच्या मंगल आगमनाने आमच्या घरी
+        आनंद, उत्साह आणि भक्तीचे वातावरण निर्माण झाले आहे.
+        या पावन प्रसंगी आपण आपल्या परिवारासह उपस्थित राहून
+        श्री गणरायांचे दर्शन घ्यावे व आमच्या आनंदात सहभागी व्हावे,
+        हीच मनःपूर्वक विनंती.
+      </p>
+
+      <div class="line"></div>
+
+      <h2 style="font-family:'Cormorant Garamond';color:#eac265;font-size:32px;">
+        Deolapure Family
+      </h2>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- DETAILS -->
+
+<section class="details">
+
+  <div class="container reveal">
+
+    <div class="subtitle">कार्यक्रमाची माहिती</div>
+
+    <div class="heading">Ganpati Celebration</div>
+
+    <div class="details-grid">
+
+      <div class="detail">
+        <div class="icon">📅</div>
+        <h3>दिनांक</h3>
+        <p>27 August 2026</p>
+      </div>
+
+      <div class="detail">
+        <div class="icon">⏰</div>
+        <h3>वेळ</h3>
+        <p>10:00 AM onwards</p>
+      </div>
+
+      <div class="detail">
+        <div class="icon">📍</div>
+        <h3>स्थळ</h3>
+        <p>Navi Mumbai</p>
+      </div>
+
+    </div>
+
+    <div class="countdown">
+
+      <div class="time">
+        <strong id="days">00</strong>
+        <span>DAYS</span>
+      </div>
+
+      <div class="time">
+        <strong id="hours">00</strong>
+        <span>HOURS</span>
+      </div>
+
+      <div class="time">
+        <strong id="minutes">00</strong>
+        <span>MINUTES</span>
+      </div>
+
+      <div class="time">
+        <strong id="seconds">00</strong>
+        <span>SECONDS</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="gallery">
+
+  <div class="container reveal">
+
+    <div class="subtitle">आमच्या बाप्पाची झलक</div>
+
+    <div class="heading">Gallery</div>
+
+    <div class="gallery-grid">
+
+      <!-- APNI PHOTOS YAHAN REPLACE KARNA -->
+
+      <img src="https://images.unsplash.com/photo-1604821462586-0f4e5c4b8f1c?auto=format&fit=crop&w=800&q=80">
+
+      <img src="https://images.unsplash.com/photo-1532375810709-75b1da00537c?auto=format&fit=crop&w=800&q=80">
+
+      <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80">
+
+      <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80">
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- LOCATION -->
+
+<section class="location">
+
+  <div class="container reveal">
+
+    <div class="subtitle">आपली वाट पाहत आहोत</div>
+
+    <div class="heading">आमच्या घरी</div>
+
+    <div class="line"></div>
+
+    <p style="color:#d8c39b;line-height:2;">
+      Deolapure Family<br>
+      Navi Mumbai, Maharashtra
+    </p>
+
+    <!-- APNA GOOGLE MAPS LINK YAHAN LAGANA -->
+
+    <a
+      class="map-btn"
+      href="https://maps.google.com"
+      target="_blank">
+      📍 OPEN GOOGLE MAPS
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<section class="footer">
+
+  <div class="container reveal">
+
+    <div class="om" style="font-size:65px;">ॐ</div>
+
+    <h2>गणपती बाप्पा मोरया!</h2>
+
+    <p>
+      With love & blessings
+    </p>
+
+    <div class="line"></div>
+
+    <p>
+      Deolapure Family ❤️
+    </p>
+
+  </div>
+
+</section>
+
+
+<script>
+
+/* ---------- LOADER ---------- */
+
+window.addEventListener("load",()=>{
+
+  setTimeout(()=>{
+    document.getElementById("loader").classList.add("hide");
+  },1200);
+
+});
+
+
+/* ---------- PETALS ---------- */
+
+for(let i=0;i<25;i++){
+
+  const petal=document.createElement("div");
+
+  petal.className="petal";
+
+  petal.style.left=Math.random()*100+"%";
+  petal.style.animationDuration=(5+Math.random()*8)+"s";
+  petal.style.animationDelay=Math.random()*5+"s";
+
+  document.body.appendChild(petal);
+
+}
+
+
+/* ---------- SCROLL REVEAL ---------- */
+
+const reveals=document.querySelectorAll(".reveal");
+
+function reveal(){
+
+  reveals.forEach(el=>{
+
+    const top=el.getBoundingClientRect().top;
+
+    if(top < window.innerHeight-100){
+      el.classList.add("active");
+    }
+
+  });
+
+}
+
+window.addEventListener("scroll",reveal);
+
+reveal();
+
+
+/* ---------- COUNTDOWN ---------- */
+
+const target=new Date("August 27, 2026 10:00:00").getTime();
+
+function countdown(){
+
+  const now=new Date().getTime();
+
+  const distance=target-now;
+
+  if(distance<=0){
+
+    document.getElementById("days").innerText="00";
+    document.getElementById("hours").innerText="00";
+    document.getElementById("minutes").innerText="00";
+    document.getElementById("seconds").innerText="00";
+
+    return;
+  }
+
+  const days=Math.floor(distance/(1000*60*60*24));
+
+  const hours=Math.floor(
+    (distance%(1000*60*60*24))/(1000*60*60)
+  );
+
+  const minutes=Math.floor(
+    (distance%(1000*60*60))/(1000*60)
+  );
+
+  const seconds=Math.floor(
+    (distance%(1000*60))/1000
+  );
+
+  document.getElementById("days").innerText=String(days).padStart(2,"0");
+
+  document.getElementById("hours").innerText=String(hours).padStart(2,"0");
+
+  document.getElementById("minutes").innerText=String(minutes).padStart(2,"0");
+
+  document.getElementById("seconds").innerText=String(seconds).padStart(2,"0");
+
+}
+
+setInterval(countdown,1000);
+
+countdown();
+
+
+/* ---------- MUSIC ---------- */
+
+const music=document.getElementById("music");
+const musicBtn=document.getElementById("musicBtn");
+
+let playing=false;
+
+musicBtn.addEventListener("click",()=>{
+
+  if(!playing){
+
+    music.play().catch(()=>{});
+
+    musicBtn.innerText="❚❚";
+    playing=true;
+
+  }else{
+
+    music.pause();
+    musicBtn.innerText="♪";
+    playing=false;
+
+  }
+
+});
+
+
+/* ---------- SMOOTH ENTRY MUSIC ---------- */
+
+document.querySelector(".enter").addEventListener("click",()=>{
+
+  music.play().catch(()=>{});
+
+  musicBtn.innerText="❚❚";
+  playing=true;
+
+});
+
+</script>
+
+</body>
+</html>
